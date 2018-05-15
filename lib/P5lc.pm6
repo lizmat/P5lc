@@ -1,5 +1,5 @@
 use v6.c;
-unit module P5lc:ver<0.0.4>;
+unit module P5lc:ver<0.0.5>:auth<cpan:ELIZABETH>;
 
 proto sub lc(|) is export {*}
 multi sub lc(         --> Str:D) { (CALLERS::<$_>).lc }
