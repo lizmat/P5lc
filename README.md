@@ -1,7 +1,7 @@
 NAME
 ====
 
-P5lc - Implement Perl's lc() / uc() built-ins
+Raku port of Perl's lc() / uc() built-ins
 
 SYNOPSIS
 ========
@@ -21,7 +21,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-This module tries to mimic the behaviour of the `lc` / `uc` functions of Perl as closely as possible.
+This module tries to mimic the behaviour of Perl's `lc` / `uc` built-ins as closely as possible in the Raku Programming Language.
 
 ORIGINAL PERL 5 DOCUMENTATION
 =============================
@@ -80,6 +80,21 @@ ORIGINAL PERL 5 DOCUMENTATION
             This function behaves the same way under various pragma, such as
             in a locale, as "lc" does.
 
+PORTING CAVEATS
+===============
+
+In future language versions of Raku, it will become impossible to access the `$_` variable of the caller's scope, because it will not have been marked as a dynamic variable. So please consider changing:
+
+    lc;
+
+to either:
+
+    lc($_);
+
+or, using the subroutine as a method syntax, with the prefix `.` shortcut to use that scope's `$_` as the invocant:
+
+    .&lc;
+
 AUTHOR
 ======
 
@@ -90,7 +105,7 @@ Source can be located at: https://github.com/lizmat/P5lc . Comments and Pull Req
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
