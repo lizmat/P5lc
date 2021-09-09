@@ -1,6 +1,6 @@
-use v6.d;
+use v6.*;
 
-unit module P5lc:ver<0.0.8>:auth<cpan:ELIZABETH>;
+unit module P5lc:ver<0.0.9>:auth<zef:lizmat>;
 
 proto sub lc(|) is export {*}
 multi sub lc(         --> Str:D) { (CALLERS::<$_>).lc }
@@ -110,14 +110,14 @@ to use that scope's C<$_> as the invocant:
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/P5lc . Comments and
 Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan.
 
